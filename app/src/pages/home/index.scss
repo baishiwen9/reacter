@@ -1,0 +1,58 @@
+
+.homeWrap{
+    background: #cdc6c726;
+    padding-bottom: 50px;
+    .am-tabs-tab-bar-wrap{
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 999;
+        width: 100%;
+    }
+    .tab-list{
+        padding:16px;
+        box-sizing: border-box;
+        margin-top: 45px;
+        .items{
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 6px;
+            padding-bottom: 8px;
+            .videoWrap{
+                position: relative;
+                .desc{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    padding: 12px;
+                    box-sizing: border-box;
+                    display: -webkit-box;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    word-break: break-all;
+                    -webkit-line-clamp: 2;   // 超出3行显示...
+                    -webkit-box-orient: vertical;
+                    /* autoprefixer: off */
+                    -webkit-box-orient: vertical;
+                    /* autoprefixer: on */
+                }
+            }
+            .basicInfo{
+                display: flex;
+                // justify-content: center;
+                align-items: center;
+                margin-top: 8px;
+                margin-left: 8px;
+                .avatar{
+                    width: 30px;
+                    height: 30px;
+                    overflow: hidden;
+                    border-radius: 50%;
+                }
+                .name{
+                    margin-left: 16px;
+                }
+            }
+        }
+    }
+}
