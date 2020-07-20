@@ -1,0 +1,13 @@
+.demo{
+    display: flex;
+    .left{
+        width: 50%;
+        border-right: 1px solid red;
+    }
+
+    .right{
+        width: 50%;
+    }
+    // max-height: 300px;
+    // overflow-y: auto;
+}

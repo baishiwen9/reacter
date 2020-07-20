@@ -1,22 +1,36 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Menu } from 'antd';
+import { NavLink, Link } from 'react-router-dom';
 import './link.scss';
+import { ThemeContext } from '../../context/theme';
 
-class Link extends Component{
+class MenuLink extends Component{
 	render(){
-		const { linkList } = this.props;
+		const currentHash = window.location.hash;
+		const { menuList } = this.props;
+		let curSelectedKeyIndex = ['1'];
+		
+		menuList.forEach((item, index) => {
+			if (currentHash.indexOf(item.path) > -1) {
+				curSelectedKeyIndex = [(index + 1) + ''];
+			}
+		});
 		return(
-			<ul className="menuList">
+			<ThemeContext.Consumer>
 				{
-					linkList.map((item, index) => (
-						<li className="list" key={index}>
-                            <NavLink exact id={item.id} to={`/${item.path}`} activeStyle={{borderBottom: `4px solid ${item.activeColor}`,color: '#333333'}} replace>{item.text}</NavLink>
-                        </li>
-					))
+					(theme) => {
+						return (
+							<Menu theme={theme} mode="horizontal" defaultSelectedKeys={curSelectedKeyIndex}>
+							{
+								menuList.map((item, index) => <Menu.Item key={index + 1}><Link id={item.id} to={`/${item.path}`} replace>{item.label}</Link></Menu.Item>)
+							}
+							</Menu>
+						)
+					}
 				}
-			</ul>
+			</ThemeContext.Consumer>
 		)
 	}
 }
 
-export default Link;
+export default MenuLink;

@@ -50,7 +50,6 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
-// This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function(webpackEnv) {
   const isEnvDevelopment = webpackEnv === 'development';
@@ -382,6 +381,9 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
+                  //新增配置
+                  ['import', { libraryName: 'antd', style: 'css' }, 'antd'],
+                  ['import', { libraryName: 'antd-mobile', style: 'css' }, 'antd-mobile'],
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -509,31 +511,89 @@ module.exports = function(webpackEnv) {
     },
     plugins: [
       // Generates an `index.html` file with the <script> injected.
-      new HtmlWebpackPlugin(
-        Object.assign(
-          {},
-          {
-            inject: true,
-            template: paths.appHtml,
-          },
-          isEnvProduction
-            ? {
-                minify: {
-                  removeComments: true,
-                  collapseWhitespace: true,
-                  removeRedundantAttributes: true,
-                  useShortDoctype: true,
-                  removeEmptyAttributes: true,
-                  removeStyleLinkTypeAttributes: true,
-                  keepClosingSlash: true,
-                  minifyJS: true,
-                  minifyCSS: true,
-                  minifyURLs: true,
-                },
-              }
-            : undefined
-        )
-      ),
+      new HtmlWebpackPlugin({
+        
+        // headjs: `<script>${fs.readFileSync(
+        //   resolve('src/template/head.js')
+        // )}</script>`,
+        // bodyjs: `<script>${fs.readFileSync(
+        //   resolve('src/template/body.js')
+        // )}</script>`,
+        // preloadDll: dllDir
+        //   ? `<link rel="preload" href="${publicPath.replace(
+        //     /\/*$/,
+        //     ''
+        //   )}/static/js/${getDllFileName()}.js" as="script" crossorigin="anonymous"></link>`
+        //   : '',
+        // dll: dllDir
+        //   ? `<script type="text/javascript" src="${publicPath.replace(
+        //     /\/*$/,
+        //     ''
+        //   )}/static/js/${getDllFileName()}.js" crossorigin="anonymous"></script>`
+        //   : '',
+        // css: `<style>${fs.readFileSync(resolve('public/loading/loading.css'))}</style>`,
+        // html: fs.readFileSync(resolve('public/loading/loading.html')),
+        // bodyjs: `<script>${fs.readFileSync(
+        //   resolve('public/loading/loading.js')
+        // )}</script>`,
+        // loading: {
+        //   html: fs.readFileSync(resolve('public/loading/loading.html')),
+        //   css: `<style>${fs.readFileSync(
+        //     resolve('public/loading/loading.css')
+        //   )}</style>`
+        // },
+        title: '前端学习笔记',
+        inject: true,
+        chunksSortMode: 'auto',
+        template: paths.appHtml,
+        minify: isEnvDevelopment
+          ? false
+          : {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeRedundantAttributes: true,
+            useShortDoctype: true,
+            removeEmptyAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            keepClosingSlash: true,
+            minifyJS: true,
+            minifyCSS: true,
+            minifyURLs: true
+          }
+      }), // 通过模板创建html
+      // new HtmlWebpackPlugin(
+      //   Object.assign(
+      //     {},
+      //     {
+      //       inject: true,
+      //       template: paths.appHtml,
+      //     },
+      //     {
+      //       // loading: {
+      //         // html: fs.readFileSync(resolve('public/loading/loading.html')),
+      //         // css: `<style>${fs.readFileSync(
+      //         //   resolve('public/loading/loading.css')
+      //         // )}</style>`
+      //       // },
+      //     },
+      //     isEnvProduction
+      //       ? {
+      //           minify: {
+      //             removeComments: true,
+      //             collapseWhitespace: true,
+      //             removeRedundantAttributes: true,
+      //             useShortDoctype: true,
+      //             removeEmptyAttributes: true,
+      //             removeStyleLinkTypeAttributes: true,
+      //             keepClosingSlash: true,
+      //             minifyJS: true,
+      //             minifyCSS: true,
+      //             minifyURLs: true,
+      //           },
+      //         }
+      //       : undefined
+      //   )
+      // ),
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       // https://github.com/facebook/create-react-app/issues/5358

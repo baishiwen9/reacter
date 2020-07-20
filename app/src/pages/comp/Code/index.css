@@ -1,0 +1,29 @@
+.code-wrap{
+    width: 100%;
+    height: auto;
+    background: #000;
+    border-radius: 8px;
+    position: relative;
+    padding: 12px;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+.btn{
+    position: absolute;
+    left: 8px;
+    top: 8px;
+}
+.code-text{
+    /* margin-top: 20px; */
+    width: 100%;
+    height: auto;
+    color: #fff;
+    font-size: 16px;
+    text-align: left;
+}
+.code-type{
+    color: red;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}

@@ -1,0 +1,32 @@
+
+.sanjiao-wrap{
+    display: flex;
+    justify-content: space-around;
+    .sanjiao-item{
+        width: 0;
+        height: 0;
+        border-top: 40px solid red;
+        
+        &.sanjiao-1{
+            border-left: 0px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 40px solid transparent;
+        }
+        &.sanjiao-2{
+            border-left: 40px solid transparent;
+            border-right: 0px solid transparent;
+            border-bottom: 40px solid transparent;
+        }
+        &.sanjiao-3{
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 0px solid transparent;
+        }
+        &.sanjiao-4{
+            border-top: 0px solid transparent;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 40px solid red;
+        }
+    }
+}

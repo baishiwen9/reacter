@@ -1,47 +1,83 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import Home from './pages/home';
-import My from './pages/my';
-import { HashRouter } from 'react-router-dom';
-import Route from './component/route/router';
-import Link from './component/route/link';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from './reducer/index';
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
+import { Layout } from 'antd';
 
+import { HashRouter } from 'react-router-dom';
+import Route from './component/route/router';
+import MenuLink from './component/route/link';
 
-const routeList = [
-    {path: '/', component: Home},
-    {path: '/home', component: Home},
-    {path: '/my', component: My},
-];
+import { MenuLinkDatas, routeList } from './config';
+import logo from './img/logo.jpg';
+import './index.css';
+import './pages/comp/common/style.css';
 
-const linkList = [
-    {path: 'home', text: '首页', id: 'home', activeColor: '#FF0000'},
-    {path: 'my', text: '我的', id: 'my', activeColor: '#0033CC'},
-];
+import Theme from './component/Theme/index';
+import { ThemeContext, themesObj } from './context/theme';
+
+const { Header } = Layout;
 
 const middleware = [thunk];
 if(process.env.NODE_ENV !== 'production'){
     middleware.push(logger)
 }
 
-const composeEnhancers =window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(...middleware)));
+
+
+class APP extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            theme: themesObj.dark,
+        }
+    }
+
+    toggleTheme = () => {
+        const { theme } = this.state;
+        this.setState({
+            theme: theme.key === 'dark' ? themesObj.light : themesObj.dark,
+        });
+    }
+
+    render() {
+        const { foreground, background, key:theme } = this.state.theme;
+        const style = {
+            color: foreground,
+            background: background,
+        }
+        return (
+            <ThemeContext.Provider value={theme}>
+                <Layout>
+                    <HashRouter>
+                        <Header className="header" style={style}>
+                            <div className="logo-wrap">
+                                <img className="logo" src={logo} alt="" />
+                            </div>
+                            <MenuLink menuList={MenuLinkDatas} />
+                            <Theme changeTheme={this.toggleTheme} style={style} theme={theme}/>
+                        </Header>
+                        <Route routeList={routeList} />
+                    </HashRouter>
+                </Layout>
+            </ThemeContext.Provider>
+        )
+    }
+}
+
+
 
 ReactDOM.render(
     <Provider store={store}>
-      <React.StrictMode>
-          <HashRouter>
-              <Route routeList={routeList} />
-              <Link linkList={linkList} />
-          </HashRouter>
-        </React.StrictMode>
+        <APP />
     </Provider>,
-  document.getElementById('root')
+    document.getElementById('root'),
 );
 
 serviceWorker.unregister();
