@@ -2,13 +2,12 @@ import ReactNote from './pages/react';
 import JSNote from './pages/js';
 import HTMLNote from './pages/html';
 import CSSNote from './pages/css';
-
-
-
-
+import BrowserNote from './pages/browser';
 import AlgorithmNote from './pages/algorithm';
-
-
+import MiniAppNote from './pages/miniApp';
+import WebpackNote from './pages/webpack';
+import PerfNote from './pages/perf';
+import NodeNote from './pages/node';
 
 const routeList = [
     {path: '/', component: ReactNote},
@@ -16,10 +15,12 @@ const routeList = [
     {path: '/js', component: JSNote},
     {path: '/html', component: HTMLNote},
     {path: '/css', component: CSSNote},
-
-
-
+    {path: '/browser-network', component: BrowserNote},
     {path: '/algorithm', component: AlgorithmNote},
+    {path: '/miniApp', component: MiniAppNote},
+    {path: '/webpack', component: WebpackNote},
+    {path: '/perf', component: PerfNote},
+    {path: '/node', component: NodeNote},
 ];
 
 
@@ -74,16 +75,16 @@ const MenuLinkDatas = [
     //     id: 'mobile',
     // },
     {
-        label: '网络',
-        prop: 'network',
-        path: 'network',
-        id: 'network',
+        label: '小程序',
+        prop: 'miniApp',
+        path: 'miniApp',
+        id: 'miniApp',
     },
     {
-        label: '浏览器',
-        prop: 'browser',
-        path: 'browser',
-        id: 'browser',
+        label: '浏览器&网络',
+        prop: 'browser-network',
+        path: 'browser-network',
+        id: 'browser-network',
     },
     {
         label: '算法',

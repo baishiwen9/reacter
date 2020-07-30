@@ -7,6 +7,7 @@
     padding: 12px;
     box-sizing: border-box;
     overflow-x: auto;
+    margin-bottom: 20px;
 }
 .btn{
     position: absolute;

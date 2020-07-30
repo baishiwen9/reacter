@@ -18,22 +18,24 @@ import Props from './communication/props';
 import Context from './communication/context';
 import ReduxComp from './communication/redux';
 import PublishSubscribe from './communication/publishSubscribe';
+import CustomRedux from './communication/custom-redux';
 
 
 import Note from './note/index';
+import SetState from './base/setState';
 
 
 // 侧边栏
 const SliderMenuList = [
     {
-        label: 'react语法',
+        label: 'react',
         prop: 'react-base',
         children: [
             {
-              label: 'base',
-              prop: 'base',
+              label: 'setState',
+              prop: 'set-state',
               comp: function() {
-                return <BaseNote />;
+                return <SetState />;
               },
             },
         ]
@@ -85,6 +87,11 @@ const SliderMenuList = [
             label: 'redux',
             prop: 'communication-redux',
             comp: () => <ReduxComp />,
+          },
+          {
+            label: '实现redux核心',
+            prop: 'custom-redux',
+            comp: () => <CustomRedux />,
           },
       ]
     },

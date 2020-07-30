@@ -426,6 +426,44 @@ d.call(null);`} />
                 参考资料：《你不知道的JavaScript-上卷》
             </div>
 
+                <div className="article-desc">
+                    以下方法调用后，分别输出什么？<br />
+                    <Code code={`
+// 方法一
+function Foo() { 
+    console.log(1);
+    return this;
+}
+// 方法二
+Foo.getName = function() {
+    console.log(2);
+    return this;
+}
+// 方法三
+var getName = function() {
+    console.log(3);
+}
+// 方法四
+function getName() {
+    console.log(4);
+}
+
+Foo.getName(); // 2, this = Foo
+getName(); // 3
+Foo().getName(); // 1 this = window  3
+getName(); // 3
+new Foo.getName(); // 2 this为Foo.getName示例
+Foo.getName().getName(); // 2 this = Foo 2
+`} ></Code>
+                    分别输出的结果是：<br />
+                    Foo.getName() : 调用方法二，输入2， 此时this为Foo对象，因为this进行了显式绑定<br /><br />
+                    getName(): 调用方法三，首先因为进行了函数申明提升（优先级高），后面方法三getName又进行了变量提升，导致getName被方法三覆盖， 所以输出3<br /><br />
+                    Foo().getName()： 首先执行方法一Foo(), 输出1， 返回的this为window， 所以在调用window.getName(),即调用方法三，输出3<br /><br />
+                    getName(): 调用方法三，首先因为进行了函数申明提升（优先级高），后面方法三getName又进行了变量提升，导致getName被方法三覆盖， 所以输出3<br /><br />
+                    new Foo.getName(): 调用方法二，输出2， 返回的this为Foo.getName的实例<br /><br />
+                    Foo.getName().getName()：首先调用方法二，输出2， 返回的this为Foo，所以再次调用Foo.getName()输出2<br /><br />
+                </div>
+
             </div>
         )
     }

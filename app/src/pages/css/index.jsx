@@ -2,11 +2,12 @@ import React from 'react';
 import LeftSider from './../comp/LeftSider';
 
 import CSS3Note from './css3/index';
-import FlexNote from './css3/flex';
+import FlexNote from './layout/flex';
 import Layout2Cols from './layout/2cols';
 import Layout3Cols from './layout/3cols';
 import LayoutGrid from './layout/grid';
 import LayoutSanjiao from './layout/sanjiao';
+import BoxModel from './css3/boxModel';
 
 
 // 侧边栏
@@ -23,18 +24,25 @@ const SliderMenuList = [
               },
             },
             {
-                label: 'flex属性',
-                prop: 'flex',
+                label: '盒模型',
+                prop: 'css3-boxModel',
+                comp: function() {
+                    return <BoxModel />;
+                },
+              },
+        ]
+    },
+    {
+        label: '布局',
+        prop: 'layout',
+        children: [
+            {
+                label: 'flex布局',
+                prop: 'layout-flex',
                 comp: function() {
                     return <FlexNote />;
                 },
             },
-        ]
-    },
-    {
-        label: '特殊布局',
-        prop: 'layout',
-        children: [
             {
               label: '两栏布局',
               prop: 'layout-2-col',
