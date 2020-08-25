@@ -10,6 +10,7 @@ export default class MyBind extends Component {
             <div>
                 <p className="article-title"><span className="textShadow">实现bind</span></p>
                 <div className="article-desc">
+                    MDN: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind<br />
                     <Code code={`
 /**
  *bind() 方法创建一个新的函数，在 bind() 被调用时，

@@ -20,6 +20,15 @@ Array.prototype.myMap = function(fn, context) {
 	}
 	return result;
 }`} />
+
+                用reduce实现map: <br />
+                <Code code={`
+Array.prototype.myMap = function(fn, context) {
+	return this.reduce((prev, item, index, arr) => {
+        prev.push(fn.call(context, item, index, arr));
+        return prev;
+    }, []);
+}`} />
                 </div>
             </div>
         )

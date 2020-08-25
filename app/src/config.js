@@ -1,7 +1,7 @@
 import ReactNote from './pages/react';
 import JSNote from './pages/js';
-import HTMLNote from './pages/html';
-import CSSNote from './pages/css';
+import HTMLNote from './pages/html&css';
+// import CSSNote from './pages/css';
 import BrowserNote from './pages/browser';
 import AlgorithmNote from './pages/algorithm';
 import MiniAppNote from './pages/miniApp';
@@ -13,8 +13,8 @@ const routeList = [
     {path: '/', component: ReactNote},
     {path: '/react', component: ReactNote},
     {path: '/js', component: JSNote},
-    {path: '/html', component: HTMLNote},
-    {path: '/css', component: CSSNote},
+    {path: '/html-css', component: HTMLNote},
+    // {path: '/css', component: CSSNote},
     {path: '/browser-network', component: BrowserNote},
     {path: '/algorithm', component: AlgorithmNote},
     {path: '/miniApp', component: MiniAppNote},
@@ -39,17 +39,17 @@ const MenuLinkDatas = [
         id: 'js',
     },
     {
-        label: 'HTML',
-        prop: 'html',
-        path: 'html',
-        id: 'html',
+        label: 'HTML&CSS',
+        prop: 'html-css',
+        path: 'html-css',
+        id: 'html-css',
     },
-    {
-        label: 'CSS',
-        prop: 'css',
-        path: 'css',
-        id: 'css',
-    },
+    // {
+    //     label: 'CSS',
+    //     prop: 'css',
+    //     path: 'css',
+    //     id: 'css',
+    // },
     {
         label: 'webpack',
         prop: 'webpack',

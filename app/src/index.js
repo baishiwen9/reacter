@@ -14,11 +14,13 @@ import MenuLink from './component/route/link';
 
 import { MenuLinkDatas, routeList } from './config';
 import logo from './img/logo.jpg';
-import './index.css';
+import './styles/root.css';
+import './styles/iconfont.css';
 import './pages/comp/common/style.css';
 
 import Theme from './component/Theme/index';
 import { ThemeContext, themesObj } from './context/theme';
+import DrawerComp from './component/Drawer';
 
 const { Header } = Layout;
 
@@ -36,6 +38,7 @@ class APP extends React.Component {
         super(props);
         this.state = {
             theme: themesObj.dark,
+            openDrawer: false,
         }
     }
 
@@ -65,6 +68,8 @@ class APP extends React.Component {
                         </Header>
                         <Route routeList={routeList} />
                     </HashRouter>
+                    <div className="noteBook" onClick={() => {this.setState({ openDrawer: true })}}><span className="iconfont icon-edit" /></div>
+                    <DrawerComp visible={this.state.openDrawer} onClose={() => {this.setState({ openDrawer: false })} }/>
                 </Layout>
             </ThemeContext.Provider>
         )

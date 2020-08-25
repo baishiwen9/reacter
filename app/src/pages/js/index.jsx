@@ -33,9 +33,28 @@ import MyConst from './mianshi/myConst';
 import MyInstanceof from './mianshi/myInstanceof';
 import MyPromise from './mianshi/myPromise';
 import MyCache from './mianshi/myCache';
+import MySetInterval from './mianshi/mySetInterval';
+import MySelfNote from './mianshi/mySelf';
+import Light from './mianshi/light';
 
 
 import MyNote from './note/index';
+import DataType from './base/dataType';
+import ObjectNote from './base/object';
+import MyObjectCreate from './mianshi/myObjectCreate';
+import CompilerNote from './base/compiler';
+import ScopeNote from './base/scope';
+import MyAsyncAwait from './es6/await';
+import MySet from './es6/set';
+import MyClass from './es6/class';
+import MyModule from './es6/module';
+import MyProxy from './es6/proxy';
+import MyInterator from './es6/interator';
+import MyGenerator from './es6/generator';
+import MyWeakSet from './es6/weakSet';
+import MyMapType from './es6/map';
+import MyQuote from './base/quote';
+import MyWeakMap from './es6/weakMap';
 
 
 
@@ -45,6 +64,27 @@ const SliderMenuList = [
         label: 'js基础',
         prop: 'js-base',
         children: [
+            {
+                label: '编译原理',
+                prop: 'compiler-note',
+                comp: function() {
+                    return <CompilerNote />;
+                },
+            },
+            {
+                label: '词法作用域',
+                prop: 'scope-note',
+                comp: function() {
+                    return <ScopeNote />;
+                },
+            },
+            {
+                label: '数据类型',
+                prop: 'data-type',
+                comp: function() {
+                    return <DataType />;
+                },
+            },
             {
               label: 'this',
               prop: 'this',
@@ -87,6 +127,16 @@ const SliderMenuList = [
                     return <EventLoop />;
                 },
             },
+            {
+                label: 'Object',
+                prop: 'js-Object',
+                comp: () => <ObjectNote />
+            },
+            {
+                label: '弱引用&强引用',
+                prop: 'js-quote',
+                comp: () => <MyQuote />
+            }
         ]
     },
     {
@@ -127,6 +177,83 @@ const SliderMenuList = [
                   return <MySymbol />;
               },
             },
+            {
+                label: 'promise',
+                prop: 'es6-promise',
+                comp: function() {
+                    return <MyPromise />;
+                },
+            },
+            {
+                label: 'await',
+                prop: 'es6-await',
+                comp: function() {
+                    return <MyAsyncAwait />;
+                },
+            },
+            {
+                label: 'Set',
+                prop: 'es6-set',
+                comp: function() {
+                    return <MySet />;
+                },
+            },
+            {
+                label: 'WeakSet',
+                prop: 'es6-weakSet',
+                comp: function() {
+                    return <MyWeakSet />;
+                },
+            },
+            {
+                label: 'Map',
+                prop: 'es6-map',
+                comp: function() {
+                    return <MyMapType />;
+                },
+            },
+            {
+                label: 'WeakMap',
+                prop: 'es6-weakmap',
+                comp: function() {
+                    return <MyWeakMap />;
+                },
+            },
+            {
+                label: 'class',
+                prop: 'es6-class',
+                comp: function() {
+                    return <MyClass />;
+                },
+            },
+            {
+                label: 'module',
+                prop: 'es6-module',
+                comp: function() {
+                    return <MyModule />;
+                },
+            },
+            {
+                label: 'proxy',
+                prop: 'es6-proxy',
+                comp: function() {
+                    return <MyProxy />;
+                },
+            },
+            {
+                label: 'interator',
+                prop: 'es6-interator',
+                comp: function() {
+                    return <MyInterator />;
+                },
+            },
+            {
+                label: 'generator',
+                prop: 'es6-generator',
+                comp: function() {
+                    return <MyGenerator />;
+                },
+            },
         ]
     },
     {
@@ -142,7 +269,7 @@ const SliderMenuList = [
             },
         ]
     },{
-        label: '面试',
+        label: '经典题目',
         prop: 'mianshi',
         children: [
             {
@@ -233,7 +360,34 @@ const SliderMenuList = [
                 comp: function() {
                     return <MyCache />;
                 },
-            },  
+            },{
+                label: '实现Object.create',
+                prop: 'mianshi-15',
+                comp: function() {
+                    return <MyObjectCreate />;
+                },
+            }, 
+            {
+                label: '实现setInterval',
+                prop: 'mianshi-16',
+                comp: function() {
+                    return <MySetInterval />;
+                },
+            }, 
+            {
+                label: '其他的方法的实现',
+                prop: 'mianshi-17',
+                comp: function() {
+                    return <MySelfNote />;
+                },
+            },
+            {
+                label: '实现红绿灯',
+                prop: 'light',
+                comp: function() {
+                    return <Light />;
+                },
+            }, 
         ]
     },
     {

@@ -1,0 +1,133 @@
+.layout-flex{
+    display: flex;
+    height: 100px;
+    .left{
+        width: 100px;
+    }
+    .right{
+        flex: 1;
+    }
+}
+
+.left{
+    border: 1px solid red;
+}
+.right{
+    border: 1px solid green;
+}
+
+.layout-float{
+    width: 100%;
+    .left{
+        float: left;
+        width: 100px;
+    }
+    .right{
+        margin-left: 100px;
+    }
+}
+
+
+.layout-position{
+    width: 100%;
+    height: 100px;
+    position: relative;
+    .left{
+        width: 100px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .right{
+        margin-left: 100px;
+        height: 100%;
+    }
+}
+
+
+.layout-table{
+    width: 100%;
+    height: 100px;
+    display: table;
+    .table-row{
+        display: table-row;
+    }
+    .left{
+        width: 100px;
+        height: 100%;
+        display: table-cell;
+    }
+    .right{
+        display: table-cell;
+    }
+}
+
+.layout-gird{
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-template-rows: 100px;
+}
+
+.layout-16to9{
+    position: relative;
+    background-color: #ccc;
+    width: 10%;
+    padding-bottom: 20%;
+    .demo{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+.layout-bfc{
+    display: flex;
+    height: 100px;
+    .demo-list{
+        flex: 1;
+        border: 1px solid red;
+        .item{
+            margin: 20px 0;
+            height: 20px;
+            &.top{
+                background: black;
+            }
+            &.bottom{
+                background: green;
+            }
+        }
+        &.right{
+            .item-wrap{
+                overflow: hidden;;
+            }
+        }
+    }
+
+}
+
+.layout-bfc-float{
+    .float-list{
+        border: 1px solid red;
+        &.left{
+            .item{
+                float: left;
+                width: 100%;
+                height: 50px;
+                background-color: green;
+            }
+        }
+        &.right{
+            margin-top: 20px;
+            overflow: hidden;   
+            .item{
+                float: left;
+                width: 100%;
+                height: 50px;
+                background-color: green;
+            }
+        }
+    }
+}

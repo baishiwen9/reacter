@@ -98,6 +98,14 @@
 }
 
 .middle-img{
-    width: 100%;
+    width: 50%;
     height: 200px;
+}
+
+.quote{
+    color: #666;
+    padding: 6px 23px;
+    margin: 22px 0;
+    border-left: 4px solid #58CE60;
+    background-color: #f8f8f8
 }

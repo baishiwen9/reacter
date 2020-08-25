@@ -24,19 +24,19 @@ export default class SetState extends Component {
             value: this.state.value + 4,
         });
 
-        document.body.addEventListener('click', () => {
-            this.setState({
-                value: this.state.value + 1,
-            });
-            console.log('---addEventListener---', this.state.value);
-        }, false);
+        // document.body.addEventListener('click', () => {
+        //     this.setState({
+        //         value: this.state.value + 1,
+        //     });
+        //     console.log('---addEventListener---', this.state.value);
+        // }, false);
 
-        setTimeout(() => {
-            this.setState({
-                value: this.state.value + 1,
-            });
-            console.log('---setTimeout---', this.state.value);
-        }, 3000);
+        // setTimeout(() => {
+        //     this.setState({
+        //         value: this.state.value + 1,
+        //     });
+        //     console.log('---setTimeout---', this.state.value);
+        // }, 3000);
 
         // setInterval(() => {
         //     this.setState({
