@@ -9,12 +9,14 @@ import ObjShili from './base/obj';
 import ObjExtend from './base/extend';
 import EventLoop from './base/eventLoop';
 import CopyNote from './base/copy';
+import DiffArrowFn from './base/diffArrowFn';
 
 import EventEmitterFn from './HeightLevelFn/EventEmitter';
 import LightImage from './HeightLevelFn/LightImage';
 import Memoization from './HeightLevelFn/memoization';
+import Currying from './HeightLevelFn/currying';
+import ThrottleAndDebounce from './HeightLevelFn/throttle&debounce';
 
-import MySymbol from './es6/symbol';
 
 
 import MatchMedia from './lessCommon/matchMedia';
@@ -37,8 +39,6 @@ import MySetInterval from './mianshi/mySetInterval';
 import MySelfNote from './mianshi/mySelf';
 import Light from './mianshi/light';
 
-
-import MyNote from './note/index';
 import DataType from './base/dataType';
 import ObjectNote from './base/object';
 import MyObjectCreate from './mianshi/myObjectCreate';
@@ -55,6 +55,7 @@ import MyWeakSet from './es6/weakSet';
 import MyMapType from './es6/map';
 import MyQuote from './base/quote';
 import MyWeakMap from './es6/weakMap';
+import MySymbol from './es6/symbol';
 
 
 
@@ -136,7 +137,13 @@ const SliderMenuList = [
                 label: '弱引用&强引用',
                 prop: 'js-quote',
                 comp: () => <MyQuote />
-            }
+            },
+            {
+                label: '箭头函数&普通函数区别',
+                prop: 'js-diffArrowFn',
+                comp: () => <DiffArrowFn />
+            },
+            
         ]
     },
     {
@@ -163,7 +170,15 @@ const SliderMenuList = [
                 comp: function() {
                     return <Memoization />;
                 },
-            },
+            },{
+                label: '函数柯力化',
+                prop: 'js-currying',
+                comp: () => <Currying />
+            },{
+                label: '节流&防抖',
+                prop: 'js-throttle&debounce',
+                comp: () => <ThrottleAndDebounce />
+            }
         ]
     },
     {
@@ -390,20 +405,6 @@ const SliderMenuList = [
             }, 
         ]
     },
-    {
-        label: '笔记',
-        prop: 'note',
-        children: [
-            {
-              label: '笔记',
-              prop: 'my-note',
-              comp: function() {
-                  return <MyNote />;
-              },
-            },
-        ]
-    },
-
 ];
 
 

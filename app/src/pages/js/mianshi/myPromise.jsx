@@ -15,8 +15,18 @@ export default class MyPromise extends Component {
 					参考文档： <br />
 					https://juejin.im/post/5e3b9ae26fb9a07ca714a5cc<br />
 					https://juejin.im/post/6856213486633304078<br />
+					https://juejin.im/post/6850037281206566919<br />
 					<a target="_blank" href="https://mp.weixin.qq.com/s?__biz=MzU5NDM5MDg1Mw==&mid=2247484225&idx=1&sn=b1d26191a41b9a3961f6798d1218fd79&chksm=fe00b96bc977307d2eab27dbd25bf6d27194d7fcdd9d9515822639b0206ad6ca1f946a0de7a9&token=1408690735&lang=zh_CN#rd">promise面试题汇总</a>
+					<br />
+					<a target="_blank" href="https://promisesaplus.com/">Promise/A+ 规范</a><br /><br />
 
+					<h3><span className="textShadow">promise简介</span></h3>
+					<div className="quote">
+						1、Promise出现的原因以及为我们解决了什么问题<br />
+						在传统的异步编程中，如果异步之间存在依赖关系，就需要通过层层嵌套回调的方式满足这种依赖，如果嵌套层数过多，可读性和可以维护性都会变得很差，产生所谓的“回调地狱”，而 Promise 将嵌套调用改为链式调用，增加了可阅读性和可维护性。也就是说，Promise 解决的是异步编码风格的问题。
+						
+					</div>
+					
 					<h3><span className="textShadow">实现promise的整体流程</span></h3>
 					<div className="quote">
 						1、定义整体结构<br />
@@ -27,6 +37,30 @@ export default class MyPromise extends Component {
 						6、实现Promise.reject<br />
 						7、实现Promise.all<br />
 						8、实现Promise.race<br />
+					</div>
+
+					<h3><span className="textShadow">Promise 的基本特征</span></h3>
+					<div className="quote">
+						1. promise 有三个状态：pending，fulfilled，or rejected；「规范 Promise/A+ 2.1」<br />
+						2. new promise时， 需要传递一个executor()执行器，执行器立即执行；<br />
+						3. executor接受两个参数，分别是resolve和reject；<br />
+						4. promise  的默认状态是 pending；<br />
+						5. promise 有一个value保存成功状态的值，可以是undefined/thenable/promise；「规范 Promise/A+ 1.3」<br />
+						6. promise 有一个reason保存失败状态的值；「规范 Promise/A+ 1.5」<br />
+						7. promise 只能从pending到rejected, 或者从pending到fulfilled，状态一旦确认，就不会再改变；<br />
+						8. promise 必须有一个then方法，then 接收两个参数，分别是 promise 成功的回调 onFulfilled, 和 promise 失败的回调 onRejected；「规范 Promise/A+ 2.2」<br />
+						9. 如果调用 then 时，promise 已经成功，则执行onFulfilled，参数是promise的value；<br />
+						10. 如果调用 then 时，promise 已经失败，那么执行onRejected, 参数是promise的reason；<br />
+						11. 如果 then 中抛出了异常，那么就会把这个异常作为参数，传递给下一个 then 的失败的回调onRejected；<br /><br />
+
+						1. then 的参数 onFulfilled 和 onRejected 可以缺省，如果 onFulfilled 或者 onRejected不是函数，将其忽略，且依旧可以在下面的 then 中获取到之前返回的值；「规范 Promise/A+ 2.2.1、2.2.1.1、2.2.1.2」<br />
+						2. promise 可以 then 多次，每次执行完 promise.then 方法后返回的都是一个“新的promise"；「规范 Promise/A+ 2.2.7」<br />
+						3. 如果 then 的返回值 x 是一个普通值，那么就会把这个结果作为参数，传递给下一个 then 的成功的回调中；<br />
+						4. 如果 then 中抛出了异常，那么就会把这个异常作为参数，传递给下一个 then 的失败的回调中；「规范 Promise/A+ 2.2.7.2」<br />
+						5. 如果 then 的返回值 x 是一个 promise，那么会等这个 promise 执行完，promise 如果成功，就走下一个 then 的成功；如果失败，就走下一个 then 的失败；如果抛出异常，就走下一个 then 的失败；「规范 Promise/A+ 2.2.7.3、2.2.7.4」<br />
+						6. 如果 then 的返回值 x 和 promise 是同一个引用对象，造成循环引用，则抛出异常，把异常传递给下一个 then 的失败的回调中；「规范 Promise/A+ 2.3.1」<br />
+						7. 如果 then 的返回值 x 是一个 promise，且 x 同时调用 resolve 函数和 reject 函数，则第一次调用优先，其他所有调用被忽略；「规范 Promise/A+ 2.3.3.3.3」
+
 					</div>
 
 					<h3><span className="textShadow">1、定义整体结构</span></h3>
@@ -49,6 +83,13 @@ class Promise {
 	catch(onRejected) {
 
 	}
+    // finally 表示不是最终的意思，而是无论如何都会执行的意思。
+    // 如果返回一个 promise 会等待这个 promise 也执行完毕。如果返回的是成功的 promise，会采用上一次的结果；如果返回的是失败的 promise，会用这个失败的结果，传到 catch 中。
+
+	finally(callback) {
+
+	}
+
 	// Promise的resolve方法，返回一个指定结果的promise对象
 	static resolve(value) {
 
@@ -243,6 +284,19 @@ static race(promises) {
 		})
 	});
 }`} />
+
+					<h3><span className="textShadow">9、实现实例的finally方法</span></h3>
+					finally 表示不是最终的意思，而是无论如何都会执行的意思。<br />
+					如果返回一个 promise 会等待这个 promise 也执行完毕。如果返回的是成功的 promise，会采用上一次的结果；如果返回的是失败的 promise，会用这个失败的结果，传到 catch 中。<br />
+					<Code code={`
+finally(callback) {
+	return this.then(res => {
+		return Promise.resolve(callback()).then(() => res);
+	}, err => {
+		return Promise.resolve(callback()).then(() => { throw err; });
+	});
+}					
+`} />
 
 
                     {/* <Code code={`

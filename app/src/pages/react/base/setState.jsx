@@ -55,9 +55,9 @@ export default class SetState extends Component {
 
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title"><span className="textShadow">setState</span></p>
-                <div className="article-desc">
+                <div className="quote">
                     1. setState只有在合成事件和钩子函数中是“异步”执行的；<br/><br/>
                     2. setState在原生事件和setTimeout中是同步执行的；<br/><br/>
                     3. setState的异步内部并不是由异步代码实现的，其实本身代码合执行的顺序都是同步的；只是因为合成事件和钩子函数的执行在更新之前，导致在合成事件和钩子函数中不能立即拿到更新后的值（可以通过setState的第二个参数callback获取最新值）。<br/><br/>

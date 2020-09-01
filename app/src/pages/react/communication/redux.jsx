@@ -7,48 +7,55 @@ export default class CommunicationRedux extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title">
                     <span className="textShadow">react组件间的通信---redux</span>
                 </p>
                 <p className="item-title">
                     <span className="textShadow">一、学习redux</span>
                 </p>
-                <div className="article-desc">
+                <div >
                     redux中文官网： <a href="https://www.redux.org.cn/" target="_blank">https://www.redux.org.cn/</a><br />
                     <br />
-                    <span className="mark">1. redux三大原则</span><br />
-                    a、单一数据源。 整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。<br /><br />
-                    b、State 是只读的。唯一改变 state 的方法就是触发 action，action 是一个用于描述已发生事件的普通对象。<br /><br />
-                    c、使用纯函数来执行修改。为了描述 action 如何改变 state tree ，需要编写 reducers。<br /><br />
-                    <br />
+                    <span className="mark">1. redux三大原则</span>
+                    <div className="quote">
+                      a、单一数据源。 整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中。<br /><br />
+                      b、State 是只读的。唯一改变 state 的方法就是触发 action，action 是一个用于描述已发生事件的普通对象。<br /><br />
+                      c、使用纯函数来执行修改。为了描述 action 如何改变 state tree ，需要编写 reducers。
+                    </div>
 
-                    <span className="mark">2. Action</span><br />
-                    a、Action: Action 是把数据从应用传到 store 的有效载荷。它是 store 数据的唯一来源。一般来说你会通过 store.dispatch() 将 action 传到 store。<br /><br />
-                    b、Action 本质: 是 JavaScript 普通对象<br /><br />
-                    c、对Action的约定：action 内必须使用一个字符串类型的 type 字段来表示将要执行的动作。多数情况下，type 会被定义成字符串常量。当应用规模越来越大时，建议使用单独的模块或文件来存放 action。<br /><br />
-                    d、应该尽量减少在 action 中传递的数据<br /><br />
-                    e、Action 创建函数： 就是生成 action 的方法<br /><br />
-                    
-                    <span className="mark">3. Reducer</span><br />
-                    a、Reducers 指定了应用状态的变化如何响应 actions 并发送到 store 的，记住 actions 只是描述了有事情发生了这一事实，并没有描述应用如何更新 state。<br /><br />
-                    b、reducer: 就是一个纯函数，接收旧的 state 和 action，返回新的 state。<br /><br />
-                    c、由于reducer是一个纯函数，所以在reducer中不能：修改传入参数；执行有副作用的操作，如 API 请求和路由跳转；调用非纯函数，如 Date.now() 或 Math.random()。<br /><br />
-                    d、处理多个 action: reducers可以处理多个action<br /><br />
+                    <span className="mark">2. Action</span>
+                    <div className="quote">
+                      a、Action: Action 是把数据从应用传到 store 的有效载荷。它是 store 数据的唯一来源。一般来说你会通过 store.dispatch() 将 action 传到 store。<br /><br />
+                      b、Action 本质: 是 JavaScript 普通对象<br /><br />
+                      c、对Action的约定：action 内必须使用一个字符串类型的 type 字段来表示将要执行的动作。多数情况下，type 会被定义成字符串常量。当应用规模越来越大时，建议使用单独的模块或文件来存放 action。<br /><br />
+                      d、应该尽量减少在 action 中传递的数据<br /><br />
+                      e、Action 创建函数： 就是生成 action 的方法
+                    </div> 
 
-                    <span className="mark">4. Store</span><br />
-                    a、Store 是把action，reducer联系到一起的对象<br /><br />
-                    b、Store 的职责：<br /><br />
-                        维持应用的 state；<br />
-                        提供 getState() 方法获取 state；<br />
-                        提供 dispatch(action) 方法更新 state；<br />
-                        通过 subscribe(listener) 注册监听器;<br />
-                        通过 subscribe(listener) 返回的函数注销监听器。<br /><br />
+                    <span className="mark">3. Reducer</span>
+                    <div className="quote">
+                      a、Reducers 指定了应用状态的变化如何响应 actions 并发送到 store 的，记住 actions 只是描述了有事情发生了这一事实，并没有描述应用如何更新 state。<br /><br />
+                      b、reducer: 就是一个纯函数，接收旧的 state 和 action，返回新的 state。<br /><br />
+                      c、由于reducer是一个纯函数，所以在reducer中不能：修改传入参数；执行有副作用的操作，如 API 请求和路由跳转；调用非纯函数，如 Date.now() 或 Math.random()。<br /><br />
+                      d、处理多个 action: reducers可以处理多个action
+                    </div>
+
+                    <span className="mark">4. Store</span>
+                    <div className="quote">
+                      a、Store 是把action，reducer联系到一起的对象<br /><br />
+                      b、Store 的职责：<br /><br />
+                          维持应用的 state；<br />
+                          提供 getState() 方法获取 state；<br />
+                          提供 dispatch(action) 方法更新 state；<br />
+                          通过 subscribe(listener) 注册监听器;<br />
+                          通过 subscribe(listener) 返回的函数注销监听器。
+                    </div>
                 </div>
                 <p className="item-title">
                     <span className="textShadow">二、API</span>
                 </p>
-                <div className="article-desc">
+                <div>
                     <span className="mark">1、createStore</span><br />
                     <div className="code-desc">
                         createStore(reducer, [preloadedState], enhancer)
@@ -104,7 +111,7 @@ console.log(store.getState())
                 <p className="item-title">
                     <span className="textShadow">三、react-redux</span>
                 </p>
-                <div className="article-desc">
+                <div >
                     react-redux API: <br /><br />
                     <span className="mark">1. Provider</span>
                     Provider 组件的属性：store， 使组件层级中的 connect() 方法都能够获得 Redux store。正常情况下，你的根组件应该嵌套在 Provider 中才能使用 connect() 方法。<br /><br />

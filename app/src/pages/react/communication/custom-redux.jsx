@@ -8,11 +8,11 @@ export default class ContextComp extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title">
                     <span className="textShadow">自己实现redux核心功能</span>
                 </p>
-                <div className="article-desc">
+                <div >
                     参考文档：<a href="https://juejin.im/post/5b29025ee51d4558b64f10bf" target="_blank">https://juejin.im/post/5b29025ee51d4558b64f10bf</a>
                     <br /><br />
                     redux使用的基础场景：<br />
@@ -40,7 +40,7 @@ store.dispatch({
                 <p className="item-title">
                     <span className="textShadow">一、实现createStore方法</span>
                 </p>
-                <div className="article-desc">
+                <div>
                     <Code code={`
 function createStore(reducer) {
     let state = null; //存储全部的状态
@@ -70,7 +70,7 @@ function createStore(reducer) {
                 <p className="item-title">
                     <span className="textShadow">二、实现combineReducers方法</span>
                 </p>
-                <div className="article-desc">
+                <div>
                 combineReducers方法会将所有的reducer合并成一个传给createStore方法。<br />
                     <Code code={`
 function combineReducers(reducers) {
@@ -92,7 +92,7 @@ creatStore(rootReducer);`} />
                 <p className="item-title">
                     <span className="textShadow">三、实现bindActionCreators方法</span>
                 </p>
-                <div className="article-desc">
+                <div>
                 bindActionCreators这个方法，这是redux提供的一个辅助方法，能够让我们以方法的形式来调用action。同时，自动dispatch对应的action。它接收2个参数，第一个参数是接收一个action creator，第二个参数接收一个 dispatch 函数，由 Store 实例提供。<br/><br/>
                 <span className="mark">不使用bindActionCreators方法：</span><br/><br/>
                 <Code code={`
@@ -144,7 +144,7 @@ TodoAction.remove('看书');
                 <p className="item-title">
                     <span className="textShadow">四、实现compose方法</span>
                 </p>
-                <div className="article-desc">
+                <div>
                 compose这个方法，这是一个redux里的辅助方法，其作用是把一系列的函数，组装生成一个新的函数，并且从后到前依次执行，后面函数的执行结果作为前一个函数执行的参数。<br /><br />
 
                 示例：<br />
@@ -179,7 +179,7 @@ composeFn('abc'); //'abc123'`} />
                 <p className="item-title">
                     <span className="textShadow">五、所有代码</span>
                 </p>
-                <div className="article-desc">
+                <div>
                     <Code code={`
 function createStore(reducer) {
     let state = null;

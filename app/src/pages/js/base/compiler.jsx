@@ -10,22 +10,18 @@ export default class CompilerNote extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title">
                     <span className="textShadow">编译原理</span>
                 </p>
-                <p className="item-title">
-                    <span className="textShadow">一、分词/词法分析（Tokenizing/Lexing）</span>
-                </p>
-                <div className="article-desc">
+                <p className="item-title">一、分词/词法分析（Tokenizing/Lexing）</p>
+                <div className="quote">
                     在词法分析阶段，会将由字符组成的字符串分解成有意义的代码块，这些代码块被称为词法单元（token）。<br />
                     var a = 2; 这段程序会被分解成为词法单元：var、a、=、2、;。
                 </div>
 
-                <p className="item-title">
-                    <span className="textShadow">二、解析/语法分析（Parsing）</span>
-                </p>
-                <div className="article-desc">
+                <p className="item-title">二、解析/语法分析（Parsing)</p>
+                <div className="quote">
                     语法分析过程是将词法单元流（数组）转换成一个由元素逐级嵌套所组成的代表了程序语法结构的树。这个树被称为“抽象语法树”（AST）。<br />
                     var a = 2 生成的抽象语法树如下：(生成AST的网址：<a href="https://astexplorer.net/" target="_blank">https://astexplorer.net/</a>)<br />
                     <Code code={`
@@ -65,18 +61,14 @@ export default class CompilerNote extends Component {
   }`} />
                 </div>
 
-                <p className="item-title">
-                    <span className="textShadow">三、代码生成</span>
-                </p>
-                <div className="article-desc">
+                <p className="item-title">三、代码生成</p>
+                <div className="quote">
                     将AST转换为可执行的代码的过程被称为代码生成。<br />
                     js代码大部分情况下编译发生在代码执行前的几微秒钟。
                 </div>
 
-                <p className="item-title">
-                    <span className="textShadow">四、过程</span>
-                </p>
-                <div className="article-desc">
+                <p className="item-title">四、过程</p>
+                <div className="quote">
                     1. 引擎： 从头到尾负责整个js程序的编译及执行过程<br />
                     2. 编译器：负责语法分析及代码生成工作<br />
                     3. 作用域：负责收集并维护所有声明的标识符（变量）组成的一系列查询，并实施一套非常严格的规则，确定当前执行的代码对这些标识符的访问权限。<br /><br />

@@ -10,11 +10,11 @@ export default class DataType extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title">
                     <span className="textShadow">数据类型</span>
                 </p>
-                <div className="article-desc">
+                <div className="">
                     思考🤔<br />
                     1. typeof null为什么为'object'？<br />
                     这是因为，不同的对象在底层都表示为二进制，在Js中二进制的前三位都为0的话会被判断为object类型，而null的二进制表示全为0，自然前三位也是0，所以执行typeof时候会返回object。<br /><br />
@@ -61,7 +61,6 @@ function deepFreeze(obj) {
     }
 }`} />
                 </div>
-                
             </div>
         )
     }

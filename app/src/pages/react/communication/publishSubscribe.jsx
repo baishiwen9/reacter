@@ -7,11 +7,11 @@ export default class CommunicationPublishSubscribe extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title">
                     <span className="textShadow">react组件间的通信---发布订阅模式</span>
                 </p>
-                <div className="article-desc">
+                <div>
                     在跨多个组件之间通信如果用props来传递的话，会显得很繁琐，很冗余，中间组件不需要props也被迫要进行传递。
                     <br /><br />
                     使用流程： 在子组件中进行订阅，在父组件中进行发布通知让子组件进行更新。

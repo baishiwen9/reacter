@@ -8,11 +8,11 @@ export default class ContextComp extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title">
                     <span className="textShadow">react组件间的通信---context</span>
                 </p>
-                <div className="article-desc">
+                <div className="quote">
                     官网文档： https://zh-hans.reactjs.org/docs/context.html#gatsby-focus-wrapper
                     <br />
                     <span className="mark">Context 提供了一个无需为每层组件手动添加 props，就能在组件树间进行数据传递的方法。</span>
@@ -29,7 +29,7 @@ export default class ContextComp extends Component {
                 <p className="item-title">
                     <span className="textShadow">一、context的API</span>
                 </p>
-                <div className="article-desc">
+                <div className="quote">
                     1. React.createContext<br />
                     <div className="code-desc">const MyContext = React.createContext(defaultValue);</div>
                     创建一个 Context 对象。当 React 渲染一个订阅了这个 Context 对象的组件，这个组件会从组件树中离自身最近的那个匹配的 Provider 中读取到当前的 context 值。
@@ -96,8 +96,6 @@ MyContext.displayName = 'MyDisplayName';
 <MyContext.Provider> // "MyDisplayName.Provider" 在 DevTools 中
 <MyContext.Consumer> // "MyDisplayName.Consumer" 在 DevTools 中`} />
                 </div>
-     
-
             </div>
         )
     }

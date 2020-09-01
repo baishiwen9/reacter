@@ -53,21 +53,21 @@ export default class Perf extends Component {
 
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title">
                     <span className="textShadow">react性能优化</span>
                 </p>
-                <div className="article-desc">
+                <div className="quote">
                     可以优化的点：<br />
                     1. 简化state<br />
                     2. 列表中使用key<br />
                     3. 纯函数(PureComponent, React.memo)<br />
-                    4. 使用shouldComponentUpdate<br />
+                    4. 使用shouldComponentUpdate
                 </div>
                 <p className="item-title">
                     <span className="textShadow">一、简化state</span>
                 </p>
-                <div className="article-desc">
+                <div>
                     在react项目中初始化的时候要经历一个：getInitialState获取每个实例的初始化状态的过程，如果我们的state是一个很大的对象，那么在初始化的时候会比较耗时。
                     在调用setState合并对象的时候也会比较耗时，所以，我们可以将不需要参与页面渲染的一些值抽离state，达到简化state的作用。
                     <Code code={`
@@ -83,7 +83,7 @@ this.state ={
                 <p className="item-title">
                     <span className="textShadow">二、渲染列表时加key</span>
                 </p>
-                <div className="article-desc">
+                <div className="">
                     在react项目中，在渲染一些列表的时候一定要加key这个属性，这样可以让react在最小范围内进行更新。
                     参考资料： https://segmentfault.com/a/1190000017152570
                     <br /><br />

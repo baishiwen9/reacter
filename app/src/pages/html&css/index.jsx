@@ -4,6 +4,8 @@ import LeftSider from '../comp/LeftSider';
 
 import H5Note from './html/h5/index';
 import Canvas from './html/h5/canvas';
+import Meta from './html/h5/meta';
+import Media from './html/h5/media';
 import H5APINote from './html/api/index';
 
 
@@ -48,6 +50,20 @@ const SliderMenuList = [
                 prop: 'h5-canvas',
                 comp: function() {
                   return <Canvas />;
+                },
+            },
+            {
+                label: 'meta',
+                prop: 'h5-meta',
+                comp: function() {
+                  return <Meta />;
+                },
+            },
+            {
+                label: '媒体',
+                prop: 'h5-media',
+                comp: function() {
+                  return <Media />;
                 },
             },
         ]
