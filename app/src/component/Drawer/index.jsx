@@ -44,6 +44,11 @@ const TabsData = [
                 id: 'js-promise',
                 text: '自己实现promise',
                 link: 'https://juejin.im/post/6856213486633304078',
+            },
+            {
+                id: 'js-this',
+                text: 'this试题',
+                link: 'https://mp.weixin.qq.com/s/1iw1MBfitockO5U0ZJIeXQ',
             }
         ]
     }

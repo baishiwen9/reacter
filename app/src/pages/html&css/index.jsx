@@ -14,6 +14,7 @@ import Margin from './css/css3/margin';
 import BFC from './css/css3/bfc';
 import ClearFloat from './css/css3/clearFloat';
 import Selector from './css/css3/selector';
+import Import from './css/css3/import';
 
 import FlexNote from './css/layout/flex';
 import Layout2Cols from './css/layout/2cols';
@@ -168,6 +169,12 @@ const SliderMenuList = [
             prop: 'css-progress',
             comp: function() {
                 return <Progress />;
+            },
+        },{
+            label: '@import',
+            prop: 'css-@import',
+            comp: function() {
+                return <Import />;
             },
         },
       ]

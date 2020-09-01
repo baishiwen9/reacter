@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Code from './../../comp/Code';
 import './../../comp/common/style.css';
 
-
-
-
 export default class ThisComp extends Component {
     constructor(props) {
         super(props);

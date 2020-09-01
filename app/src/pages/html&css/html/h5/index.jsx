@@ -7,15 +7,15 @@ export default class H5Page extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title"><span className="textShadow">h5新特性</span></p>
-                <div className="article-desc">
+                <div className="quote">
                     参考文档： https://juejin.im/post/6844903878857588750<br />
                     https://juejin.im/post/6844903919710126087<br />
                 </div>
 
-                <p className="item-title"><span className="textShadow">一、h5新增语义化标签</span></p>
-                <div className="article-desc">
+                <p className="item-title">一、h5新增语义化标签</p>
+                <div className="quote">
                     列举一些具有代表性和经常用的标签：<br /><br />
                     1. header: 标记定义一个页面或一个区域的头部<br />
                     2. nav: 标记定义导航链接<br />
@@ -25,16 +25,16 @@ export default class H5Page extends Component {
                     6. footer: 标记定义一个页面或一个区域的底部<br />
                 </div>
 
-                <p className="item-title"><span className="textShadow">二、语义化的作用</span></p>
-                <div className="article-desc">
+                <p className="item-title">二、语义化的作用</p>
+                <div className="quote">
                     1. 为了在没有css的情况下，页面也能呈现出很好地内容结构、代码结构；<br /><br />
                     2. 有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；<br /><br />
                     3. 方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方式来渲染网页；<br /><br />
                     4. 便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。<br />
                 </div>
 
-                <p className="item-title"><span className="textShadow">三、html书写规范</span></p>
-                <div className="article-desc">
+                <p className="item-title">三、html书写规范</p>
+                <div className="quote">
                     1. 尽可能少的使用无语义的标签div和span；<br /><br />
                     2. 在语义不明显时，既可以使用div或者p时，尽量用p, 因为p在默认情况下有上下间距，对兼容特殊终端有利；<br /><br />
                     3. 不要使用纯样式标签，如：b、font、u等，改用css设置<br /><br />
@@ -43,8 +43,8 @@ export default class H5Page extends Component {
                     6. 每个input标签对应的说明文本都需要使用label标签，并且通过为input设置id属性，在lable标签中设置for=someld来让说明文本和相对应的input关联起来.<br /><br />
                 </div>
 
-                <p className="item-title"><span className="textShadow">四、input新增的type 和 属性</span></p>
-                <div className="article-desc">
+                <p className="item-title">四、input新增的type 和 属性</p>
+                <div className="quote">
                     <span className="mark">新增的type如下：</span><br/><br/>
 
                     email<br />

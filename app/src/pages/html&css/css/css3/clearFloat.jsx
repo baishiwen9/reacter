@@ -8,11 +8,11 @@ export default class ClearFloat extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title"><span className="textShadow">清浮动</span></p>
                 
-                <p className="item-title"><span className="textShadow">一、浮动</span></p>
-                <div className="article-desc">
+                <p className="item-title">一、浮动</p>
+                <div className="quote">
                     <span className="mark">float被设计出来的目的是为了实现文字环绕图片的效果。</span><br /><br />
                     浮动的定义为浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。由于浮动框脱离文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。<br /><br />
 
@@ -27,8 +27,8 @@ export default class ClearFloat extends Component {
                 </div>
 
 
-                <p className="item-title"><span className="textShadow">二、清浮动</span></p>
-                <div className="article-desc">
+                <p className="item-title">二、清浮动</p>
+                <div className="quote">
                     1. 给父元素给指定的高度值（扩展性不好）<br /><br />
                     2. 添加一个空的块级元素设置clear: both;来清浮动：<br />
                         缺点： 增加了无意义的冗余的标签<br />
@@ -37,8 +37,8 @@ export default class ClearFloat extends Component {
                     4. 给父元素使用overflow: hidden;来清浮动<br />
                         原理： 让父元素触发BFC，由于BFC的高度包含浮动元素的高度，所以父元素高度不会塌陷。<br /><br />
                     5. br标签：设置br标签的clear属性为all即可。<br />
-
-                    <Code code={`
+                </div>
+                <Code code={`
 //给父元素指定高度
 .parent{
     width: 100px;
@@ -90,9 +90,8 @@ export default class ClearFloat extends Component {
     <div class="son"></div>
     <br clear="all" />
 </div>`} />
-                </div>
-                <p className="item-title"><span className="textShadow">三、清浮动总结</span></p>
-                <div className="article-desc">
+                <p className="item-title">三、清浮动总结</p>
+                <div className="quote">
                     清浮动一般可以分为两类，一类是使用clear属性，另一类是触发BFC<br /><br />
 
                     1. clear属性：<br />
@@ -103,7 +102,6 @@ export default class ClearFloat extends Component {
                     BFC是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
                     由于BFC的高度包含浮动元素的高度，所以父元素高度不会塌陷。
                 </div>
-
             </div>
         )
     }

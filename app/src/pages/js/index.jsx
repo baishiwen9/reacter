@@ -57,7 +57,7 @@ import MyQuote from './base/quote';
 import MyWeakMap from './es6/weakMap';
 import MySymbol from './es6/symbol';
 
-
+import CompMode from './mode/compMode';
 
 // 侧边栏
 const SliderMenuList = [
@@ -405,6 +405,19 @@ const SliderMenuList = [
             }, 
         ]
     },
+    {
+        label: '模式',
+        prop: 'modes',
+        children: [
+            {
+              label: '组件设计原则',
+              prop: 'comp-mode',
+              comp: function() {
+                  return <CompMode />;
+              },
+            },
+        ]
+    }
 ];
 
 

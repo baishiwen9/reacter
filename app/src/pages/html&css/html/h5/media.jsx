@@ -256,17 +256,14 @@ export default class Media extends Component {
         ];
        
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title"><span className="textShadow">video & audio</span></p>
-                <div className="article-desc">
-                    <h3>1. 属性</h3>
-                    <Table dataSource={dataSource_prop} columns={columns_prop} pagination={false} />
-                    <br />
-                    <h3>2. 事件</h3>
-                    <Table dataSource={dataSource_event} columns={columns_event} pagination={false} />
-                    audio元素还有一个原生的js构造函数Audio，可以在任何时候播放音频。
-
-                </div>
+                <h3>1. 属性</h3>
+                <Table dataSource={dataSource_prop} columns={columns_prop} pagination={false} />
+                <br />
+                <h3>2. 事件</h3>
+                <Table dataSource={dataSource_event} columns={columns_event} pagination={false} />
+                audio元素还有一个原生的js构造函数Audio，可以在任何时候播放音频。
             </div>
         )
     }

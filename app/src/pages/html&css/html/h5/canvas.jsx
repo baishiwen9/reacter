@@ -7,7 +7,7 @@ export default class Canvas extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title"><span className="textShadow">canvas</span></p>
                 
             </div>
