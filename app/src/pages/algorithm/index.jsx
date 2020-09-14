@@ -2,6 +2,11 @@ import React from 'react';
 import LeftSider from './../comp/LeftSider';
 
 
+import BubbleSort from './bubbleSort';
+import QuickSort from './quickSort';
+import SelectionSort from './selectionSort';
+
+
 import TreeSort from './tree';
 // import H5APINote from './api/index';
 
@@ -16,15 +21,22 @@ const SliderMenuList = [
               label: '冒泡排序',
               prop: 'algorithm-bubble-sort',
               comp: function() {
-                return null;
+                return <BubbleSort />;
               },
             },
             {
                 label: '快排',
                 prop: 'algorithm-quick',
                 comp: function() {
-                  return null;
+                  return <QuickSort />;
                 },
+            },
+            {
+              label: '快排',
+              prop: 'algorithm-quick',
+              comp: function() {
+                return <SelectionSort />;
+              },
             },
             {
                 label: '二叉树',

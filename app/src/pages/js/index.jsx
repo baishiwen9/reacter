@@ -10,6 +10,7 @@ import ObjExtend from './base/extend';
 import EventLoop from './base/eventLoop';
 import CopyNote from './base/copy';
 import DiffArrowFn from './base/diffArrowFn';
+import Ajax from './base/ajax';
 
 import EventEmitterFn from './HeightLevelFn/EventEmitter';
 import LightImage from './HeightLevelFn/LightImage';
@@ -38,6 +39,9 @@ import MyCache from './mianshi/myCache';
 import MySetInterval from './mianshi/mySetInterval';
 import MySelfNote from './mianshi/mySelf';
 import Light from './mianshi/light';
+import MyClone from './mianshi/myClone';
+import MyFlat from './mianshi/myFlat';
+import MyReduce from './mianshi/myReduce';
 
 import DataType from './base/dataType';
 import ObjectNote from './base/object';
@@ -58,6 +62,9 @@ import MyWeakMap from './es6/weakMap';
 import MySymbol from './es6/symbol';
 
 import CompMode from './mode/compMode';
+import MyJsonp from './mianshi/myJsonp';
+import MySleep from './mianshi/mySleep';
+
 
 // 侧边栏
 const SliderMenuList = [
@@ -119,6 +126,13 @@ const SliderMenuList = [
                 prop: 'obj-extend',
                 comp: function() {
                     return <ObjExtend />;
+                },
+            },
+            {
+                label: 'ajax',
+                prop: 'js-ajax',
+                comp: function() {
+                    return <Ajax />;
                 },
             },
             {
@@ -403,6 +417,42 @@ const SliderMenuList = [
                     return <Light />;
                 },
             }, 
+            {
+                label: '实现浅拷贝&深拷贝',
+                prop: 'myclone',
+                comp: function() {
+                    return <MyClone />;
+                },
+            }, 
+            {
+                label: '实现数组扁平化Flat',
+                prop: 'myFlat',
+                comp: function() {
+                    return <MyFlat />;
+                },
+            }, 
+            {
+                label: '实现JSONP',
+                prop: 'my-jsonp',
+                comp: function() {
+                    return <MyJsonp />;
+                },
+            }, 
+            {
+                label: '实现sleep',
+                prop: 'my-sleep',
+                comp: function() {
+                    return <MySleep />;
+                },
+            }, 
+            {
+                label: '实现reduce',
+                prop: 'my-reduce',
+                comp: function() {
+                    return <MyReduce />;
+                },
+            }
+
         ]
     },
     {

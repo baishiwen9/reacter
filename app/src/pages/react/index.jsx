@@ -31,6 +31,13 @@ const SliderMenuList = [
         label: 'react',
         prop: 'react-base',
         children: [
+          {
+            label: 'react基础',
+            prop: 'react-base',
+            comp: function() {
+              return <BaseNote />;
+            },
+          },
             {
               label: 'setState',
               prop: 'set-state',

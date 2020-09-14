@@ -41,7 +41,7 @@ const TabsData = [
                 link: 'https://astexplorer.net/',
             },
             {
-                id: 'js-promise',
+                id: 'js-promise-self',
                 text: '自己实现promise',
                 link: 'https://juejin.im/post/6856213486633304078',
             },
@@ -49,8 +49,38 @@ const TabsData = [
                 id: 'js-this',
                 text: 'this试题',
                 link: 'https://mp.weixin.qq.com/s/1iw1MBfitockO5U0ZJIeXQ',
+            },
+            {
+                id: 'js-js30', 
+                text: 'javascript30',
+                link: 'https://github.com/wesbos/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/index-FINISHED.html',
+            },
+            {
+                id: 'js-vdom', 
+                text: '虚拟DOM性能',
+                link: 'https://www.zhihu.com/question/31809713/answer/53544875',
+            },
+            {
+                id: 'js-browser', 
+                text: '浏览器进程&线程',
+                link: 'https://segmentfault.com/a/1190000012925872',
+            },
+            {
+                id: 'js-custom',
+                text: '自己实现js方法',
+                link: 'https://juejin.im/post/6870319532955828231',
+            },
+            {
+                id: 'js-babel',
+                text: 'babel在线转换',
+                link: 'https://www.babeljs.cn/repl'
             }
         ]
+    },
+    {
+        type: 'react',
+        text: 'react',
+        notes: []
     }
 ];
 

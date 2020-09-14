@@ -67,6 +67,14 @@ export default class SetState extends Component {
                     这是由于setTimeout是异步代码，根据event loop，先会执行调用栈中同步代码，只到调用栈为空的时候，回去检查事件队列里有没有事件，如果有则拿出来执行。所以setTimeout中的setState是“同步”执行的。<br/><br/>
                     react的事件机制：react为了解决跨平台，兼容性问题，自己封装了一套事件机制，代理了原生的事件，像在jsx中常见的onClick、onChange这些都是合成事件。
                 </div>
+
+                <p className="item-title">react的哪些生命周期中可以setState</p>
+                <div className="quote">
+                    componentDidMount可以<br />
+                    shouldComponentUpdate 和 componentWillUpdate中禁止调用setState，否则会形成一个死循环直至浏览器崩溃<br />
+                    componentDidUpdate中可以，效果和componentDidMount一样<br />
+                    componentWillReceviceProps中可以调用setState
+                </div>
             </div>
         )
     }

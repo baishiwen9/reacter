@@ -11,6 +11,17 @@ export default class Api extends Component {
                 <p className="article-title"><span className="textShadow">h5中新增的api</span></p>
                 <div className="article-desc">
                     <h3>1. localStorage & seessionStorage</h3>
+                    <div className="quote">
+                        window.localStorage.getItem(key);<br />
+                        window.localStorage.setItem(key, value);<br />
+                        window.localStorage.removeItem(key);<br />
+                        window.localStorage.clear();<br /><br />
+
+                        window.sessionStorage.getItem(key);<br />
+                        window.sessionStorage.setItem(key, value);<br />
+                        window.sessionStorage.removeItem(key);<br />
+                        window.sessionStorage.clear();
+                    </div>
                     <Code code={`
 const storage = {
     localStorage: {
@@ -49,7 +60,20 @@ const storage = {
                     </div>
                     <Code code={`
 navigator.geolocation.getCurrentPosition(function(position) {
-    const {latitude, longitude} = position.coords;
+    const 
+        {
+            coords: 
+                {
+                    latitude, //(十进制维度)
+                    longitude, //（十进制经度）
+                    accuracy,  //（经纬度坐标的经度，单位米）
+                    altitude,   //（海拔高度，单位米）
+                    altitudeAccuracy, //（海拔高度的经度，单位米）
+                    heading, //（指南针的方向，0度表示正北）
+                    speed, //（速度，每秒移动多少米）
+                },
+            timestamp,
+        } = position;
     console.log(latitude, longitude);
 }, function(err) {
     const {code, message} = err;

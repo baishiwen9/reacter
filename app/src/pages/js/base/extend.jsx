@@ -8,20 +8,19 @@ export default class ObjExtend extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title"><span className="textShadow">对象继承方法</span></p>
-                <div className="article-desc">
+                <div className="quote">
                     对象的实例化方法主要有：<br />
                         <span className="text-placeholder"></span>原型继承<br />
                         <span className="text-placeholder"></span>构造函数继承<br />
                         <span className="text-placeholder"></span>组合式继承（原型继承 + 构造函数继承）<br />
                         <span className="text-placeholder"></span>寄生式组合继承<br />
                         参考文章： https://juejin.im/post/5e8b261ae51d4546c0382ab4
-                        
                 </div>
-                <p className="item-title"><span className="textShadow">一、原型继承</span></p>
-                <div className="article-desc">
-                    <Code code={`
+
+                <p className="item-title">一、原型继承</p>
+                <Code code={`
 // 父类
 function Person() {
     this.name = ['xixi'];
@@ -47,15 +46,15 @@ child2.getName(); //['xixi'];
 child1.name[0] = 'xiaoming';
 // 会影响其他子类的属性
 child2.name; // ['xiaoming'];
-`} /><br /><br />
+`} />           
+                <div className="quote">
                     <span className="mark">原型继承缺点：</span><br />
-                    <span className="text-placeholder"></span>1. 某个实例修改父类中的引用类型的属性后会影响到其他的所有的子类<br /><br />
+                    <span className="text-placeholder"></span>1. 某个实例修改父类中的引用类型的属性后会影响到其他的所有的子类<br />
                     <span className="text-placeholder"></span>2. 无法向父类传参
                 </div>
 
-                <p className="item-title"><span className="textShadow">二、构造函数继承</span></p>
-                <div className="article-desc">
-                    <Code code={`
+                <p className="item-title">二、构造函数继承</p>
+                <Code code={`
 function Parent(name) {
     this.name = name;
 }
@@ -74,14 +73,14 @@ child1.name; //xixi
 child1.age; //undefined
 child1.getName(); // 报错
 
-`} /><br /><br />
+`} />
+                <div className="quote">
                     <span className="mark">构造函数继承的缺点：</span><br />
-                    <span className="text-placeholder"></span>1. 子类无法继承父类原型链上的属性和方法<br /><br />
+                    1. 子类无法继承父类原型链上的属性和方法
                 </div>
 
-                <p className="item-title"><span className="textShadow">三、组合式继承</span></p>
-                <div className="article-desc">
-                    <Code code={`
+                <p className="item-title">三、组合式继承</p>
+                <Code code={`
 function Parent(name) {
     this.name = name;
 }
@@ -102,14 +101,14 @@ var child1 = new Child('xixi');
 child1.name; //xixi
 child1.age; //18
 child1.getName(); //xixi
-`} /><br /><br />
+`} />
+                <div className="quote">
                     <span className="mark">组合式继承的缺点：</span><br />
-                    <span className="text-placeholder"></span>1. 每次创建子类实例的时候都执行了两次构造函数（new Parent() 和 Parent.call()）,这并不影响父类的继承，但是子类创建实例时，原型中会保存两份一样的属性和方法，这不是很优雅<br /><br />
+                    1. 每次创建子类实例的时候都执行了两次构造函数（new Parent() 和 Parent.call()）,这并不影响父类的继承，但是子类创建实例时，原型中会保存两份一样的属性和方法，这不是很优雅
                 </div>
 
-                <p className="item-title"><span className="textShadow">四、寄生式组合继承</span></p>
-                <div className="article-desc">
-                    <Code code={`
+                <p className="item-title">四、寄生式组合继承</p>
+                <Code code={`
 function Parent(name) {
     this.name = name;
 }
@@ -135,11 +134,7 @@ Child.prototype.constructor = Child;
 var child = new Child('xiaoming');
 
 child.name; //'xiaoming'
-child.getName(); //'xiaoming'
-
-`} />
-                </div>
-                
+child.getName(); //'xiaoming'`} />
             </div>
         )
     }

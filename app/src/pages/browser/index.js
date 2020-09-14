@@ -12,7 +12,7 @@ import HTTPNote from './network/http';
 import HTTPsNote from './network/https';
 import TcpNote from './network/tcp';
 
-
+import FeSafe from './safe/feSafe';
 
 // 侧边栏
 const SliderMenuList = [
@@ -64,7 +64,19 @@ const SliderMenuList = [
                     return <TcpNote />;
                 },
             },
-            
+        ]
+    },
+    {
+        label: '安全',
+        prop: 'fe-safe',
+        children: [
+            {
+              label: '前端安全',
+              prop: 'fe-safe-note',
+              comp: function() {
+                  return <FeSafe />;
+              },
+            }
         ]
     },
 

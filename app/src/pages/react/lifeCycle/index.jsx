@@ -1,13 +1,47 @@
 import React, { Component } from 'react';
 import Code from './../../comp/Code';
 import lifeCycleIcon from '../../../img/life-cycle.jpg';
-
+import Test from './Test';
 
 export default class LifeCycle extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            value: 0
+        }
+        console.log('%c我是---constructor---', 'background: red; color: white;');
+    }
+    static getDerivedStateFromProps(props, states) {
+        console.log('%c我是---getDerivedStateFromProps---', 'background: red; color: white;', props, states);
+        return null;
+    }
+    // componentWillMount() {
+    //     console.log('%c我是---componentWillMount---', 'background: red; color: white;');
+    // }
+    componentDidMount() {
+        console.log('%c我是---componentDidMount---', 'background: red; color: white;');
+    }
+
+    update() {
+        const {value} = this.state;
+        this.setState({
+            value: value + 1
+        });
+    }
+
+    // componentWillUpdate() {
+    //     console.log('%c我是---componentWillUpdate---', 'background: red; color: white;');
+    // }
+
+    shouldComponentUpdate() {
+        console.log('%c我是---shouldComponentUpdate---', 'background: red; color: white;'); 
+        return true;
+    }
+    componentDidUpdate() {
+        console.log('%c我是---componentDidUpdate---', 'background: red; color: white;'); 
     }
     render() {
+        console.log('%c我是---render---', 'background: red; color: white;');
         return (
             <div className="article-desc">
                 <p className="article-title"><span className="textShadow">生命周期</span></p>
@@ -17,7 +51,8 @@ export default class LifeCycle extends Component {
                         <span className="text-placeholder"></span>更新<br />
                         <span className="text-placeholder"></span>卸载<br />
                 </div>
-
+                <button onClick={() => this.update()}>点击更新---{this.state.value}</button>
+                <Test value={this.state.value} />
                 <img className="big-img" src={lifeCycleIcon} alt="" />
                 <p className="item-title"><span className="textShadow">一、挂载</span></p>
                 <div className="quote">
@@ -66,6 +101,29 @@ static getDerivedStateFromProps(nextProps, preState) {
     return null; //不更新state
 }`} />
                     <span className="mark">2. getSnapshotBeforeUpdate(prevProps, prevState)</span>
+                </div>
+                <p className="item-title">props变化后会执行哪些生命周期</p>
+                <div className="quote">
+                    componentWillRecevieProps<br />
+                    shouldcomponentUpdate<br />
+                    componentWillUpdate<br />
+                    render<br />
+                    componentDidUpdate
+                </div>
+
+                <p className="item-title">react执行多次&执行一次的生命周期</p>
+                <div className="quote">
+                    执行多次的：<br />
+                    componentWillReceiveProps<br />
+                    shouldComponentUpate<br />
+                    componentWillUpdate<br />
+                    render<br />
+                    componentDidUpdate<br /><br />
+                    执行一次的：<br />
+                    constructor<br />
+                    componentWillMount<br />
+                    componentDidMount<br />
+                    componentWillUnmount
                 </div>
             </div>
         )
