@@ -15,13 +15,21 @@ export default class ThrottleAndDebounce extends Component {
                     <span className="textShadow">节流和防抖</span>
                 </p>
 
+                <div className="quote">
+                    节流和防抖的区别？<br />
+                    假设一个用户一直触发这个函数，且每次触发函数的间隔小于wait，防抖的情况下只会调用一次，而节流的情况会每隔一定时间（参数wait）调用函数。
+                </div>
+
                 <h3>1. 节流</h3>
                 <div className="quote">
                     基本思想： 某些代码不可以在没有间断的情况下连续重复执行。<br />
                     第一次调用函数创建一个定时器，在指定的时间间隔后执行代码；<br />
                     第二次调用该函数的时候，它会清除前一次的定时器并创建一个新的。<br /><br />
 
-                    目的：按照设置的时间间隔执行。只要代码是周期性执行的，都应该使用节流。
+                    目的：按照设置的时间间隔执行。只要代码是周期性执行的，都应该使用节流。<br />
+
+                    使用场景：
+
                 </div>
 
                 <Code code={`

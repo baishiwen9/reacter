@@ -3,6 +3,7 @@ import LeftSider from './../comp/LeftSider';
 
 
 import BubbleSort from './bubbleSort';
+import Mianshi from './mianshi';
 import QuickSort from './quickSort';
 import SelectionSort from './selectionSort';
 
@@ -32,8 +33,8 @@ const SliderMenuList = [
                 },
             },
             {
-              label: '快排',
-              prop: 'algorithm-quick',
+              label: '选择排序',
+              prop: 'algorithm-selection',
               comp: function() {
                 return <SelectionSort />;
               },
@@ -45,6 +46,13 @@ const SliderMenuList = [
                   return <TreeSort />;
                 },
             },
+            {
+              label: '常见算法题',
+              prop: 'algorithm-note',
+              comp: function() {
+                return <Mianshi />;
+              },
+          },
         ]
     },
 ];

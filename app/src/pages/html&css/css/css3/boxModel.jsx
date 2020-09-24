@@ -22,7 +22,7 @@ export default class BoxModel extends Component {
                     <span className="mark">1. 标准盒模型</span><br />
                     标准盒模型中width指的是内容区域content的宽度；height指的是内容区域content的高度。<br /><br />
                     标准盒模型下盒子的大小  = content + border + padding + margin<br /><br />
-                    <img className="middle-img" alt="" src={BoxModelIcon1} />
+                    <img className="middle-img" alt="" src={BoxModelIcon1} /><br />
 
                     <span className="mark">2. 怪异盒模型</span><br />
                     怪异盒模型中的width指的是内容、边框、内边距总的宽度（content + border + padding）;<br />

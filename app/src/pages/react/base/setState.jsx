@@ -11,18 +11,38 @@ export default class SetState extends Component {
 
     componentDidMount() {
         this.setState({
-            value: this.state.value + 1,
-        });
-        console.log('---componentDidMount---', this.state.value);
+            value: this.state.value + 2
+        })
+        console.log('--- first ---',this.state.value);
         this.setState({
-            value: this.state.value + 2,
-        });
-        this.setState({
-            value: this.state.value + 3,
-        });
-        this.setState({
-            value: this.state.value + 4,
-        });
+            value: this.state.value + 1
+        })
+        console.log('--- second ---', this.state.value);
+
+        setTimeout(() =>  {
+            this.setState({
+                value: this.state.value + 1,
+            })
+            console.log('--- third ---', this.state.value);
+            this.setState({
+                value: this.state.value + 1,
+            })
+            console.log('--- fifth ---', this.state.value);
+        })
+        // ===================================
+        // this.setState({
+        //     value: this.state.value + 1,
+        // });
+        // console.log('---componentDidMount---', this.state.value);
+        // this.setState({
+        //     value: this.state.value + 2,
+        // });
+        // this.setState({
+        //     value: this.state.value + 3,
+        // });
+        // this.setState({
+        //     value: this.state.value + 4,
+        // });
 
         // document.body.addEventListener('click', () => {
         //     this.setState({

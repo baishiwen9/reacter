@@ -220,6 +220,24 @@ function jsonToMap(jsonStr) {
 jsonToMap('[[true,7],[{"foo":3},["abc"]]]')
 `} />
                 </div>
+                <h3>相关面试题</h3>
+                <Code code={`
+var a = {}, b = '123', c = 123;
+a[b] = 'b'; a[c] = 'c';
+console.log(a[b]); // 'c'
+
+var a = {}, b = Symbol('123'), c = Symbol('123');
+a[b] = 'b'; a[c] = 'c';
+console.log(a[b]); // 'b'
+
+var a = {}, b = {key: '123'}, c = {key: 456};
+a[b] = 'b'; a[c] = 'c';
+console.log(a[b]); // 'c'
+
+
+var a = new Map(), b = '123', c = 123;
+a.set(b, 'b'); a.set(c, 'c');
+console.log(a.get(b)); // 'b'`} />
             </div>
         )
     }

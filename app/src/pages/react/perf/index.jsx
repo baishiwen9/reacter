@@ -58,6 +58,7 @@ export default class Perf extends Component {
                     <span className="textShadow">react性能优化</span>
                 </p>
                 <div className="quote">
+                    影响网页性能最大的因素是浏览器的重绘（reflow）和重排（repaint），virtual Dom就是尽可能的减少浏览器的重绘和重排。< br />
                     可以优化的点：<br />
                     1. 简化state<br />
                     2. 列表中使用key<br />

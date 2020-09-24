@@ -49,7 +49,7 @@ function myInstanceof(obj1, obj2) {
 // Object.getPrototypeOf ( )：用来获取某个实例对象的原型
 function myInstanceof(instanObj, classFn) {
 	let prototype = classFn.prototype;
-	let proto = instanObj.__proto;
+	let proto = instanObj.__proto__;
 	while(true) {
 		if (proto === null) {
 			return false;

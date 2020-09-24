@@ -39,6 +39,30 @@ function myFlat(arr) {
         return pre.concat(Array.isArray(cur) ? myFlat(cur) : cur);
     }, []);
 }
+
+// 指定展开的层数
+function flat (arr, count = 0) {
+    var res = [], newcount = 0;
+    function flatFn(arr) {
+        arr.forEach((item, index) => {
+            if (Array.isArray(item)) {
+                if (newcount < count) {
+                    newcount++;
+                    flatFn(item);
+                } else {
+                    res.push(item);
+                }
+            } else {
+                res.push(item);
+                if (index == arr.length - 1) {
+                    newcount = 0;
+                }
+            }
+        })
+    }
+    flatFn(arr);
+    return res;
+}
 `} />
             </div>
         )

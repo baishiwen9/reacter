@@ -57,6 +57,24 @@ Function.prototype.myBind = function(content) {
         return self.apply(content, args);
     }
 }`} />
+                <h3>3. 函数柯力化抽象封装</h3>
+                <Code code={`
+function currying(fn, ...args) {
+    return function() {
+        var params = args.concat(Array.from(arguments));
+        var length = fn.length;
+        if (length == params.length) {
+            return fn(...params);
+        } else {
+            return currying(fn, ...params);
+        }
+    }
+}
+function test(a,b,c, d) {
+    return a+b+c+d;
+}
+var fn = currying(test);
+console.log(fn(1)(2)(3)(4));`} />
             </div>
         )
     }

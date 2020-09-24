@@ -11,6 +11,8 @@ import EventLoop from './base/eventLoop';
 import CopyNote from './base/copy';
 import DiffArrowFn from './base/diffArrowFn';
 import Ajax from './base/ajax';
+import CookieSession from './base/cookie&session';
+import Prototype from './base/prototype';
 
 import EventEmitterFn from './HeightLevelFn/EventEmitter';
 import LightImage from './HeightLevelFn/LightImage';
@@ -65,6 +67,12 @@ import CompMode from './mode/compMode';
 import MyJsonp from './mianshi/myJsonp';
 import MySleep from './mianshi/mySleep';
 
+import JsBridge from './mobile/jsBridge';
+import Router from './base/router';
+import Git from './tool/git';
+import Vim from './tool/vim';
+import Linux from './tool/linux';
+import Photoshop from './tool/photoshop';
 
 // 侧边栏
 const SliderMenuList = [
@@ -156,8 +164,20 @@ const SliderMenuList = [
                 label: '箭头函数&普通函数区别',
                 prop: 'js-diffArrowFn',
                 comp: () => <DiffArrowFn />
+            },{
+                label: 'cookie & session',
+                prop: 'js-cookie-session',
+                comp: () => <CookieSession />
+            },{
+                label: '原型 & 原型链',
+                prop: 'js-prototype',
+                comp: () => <Prototype />
             },
-            
+            {
+                label: '前端路由',
+                prop: 'js-router',
+                comp: () => <Router />
+            },
         ]
     },
     {
@@ -467,7 +487,54 @@ const SliderMenuList = [
               },
             },
         ]
-    }
+    },
+    {
+        label: '移动端',
+        prop: 'mobile-article',
+        children: [
+            {
+              label: 'jsBridge',
+              prop: 'mobile-jsBridge',
+              comp: function() {
+                  return <JsBridge />;
+              },
+            },
+        ]
+    },
+    {
+        label: '常用工具',
+        prop: 'js-tool',
+        children: [
+            {
+              label: 'git',
+              prop: 'tool-git',
+              comp: function() {
+                  return <Git />;
+              },
+            },
+            {
+                label: 'vim',
+                prop: 'tool-vim',
+                comp: function() {
+                    return <Vim />;
+                },
+            },
+            {
+                label: 'linux',
+                prop: 'tool-linux',
+                comp: function() {
+                    return <Linux />;
+                },
+            },
+            {
+                label: 'photoshop',
+                prop: 'tool-photoshop',
+                comp: function() {
+                    return <Photoshop />;
+                },
+            },
+        ]
+    },
 ];
 
 

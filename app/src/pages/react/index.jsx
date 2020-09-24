@@ -23,6 +23,7 @@ import CustomRedux from './communication/custom-redux';
 
 import Note from './note/index';
 import SetState from './base/setState';
+import CssModules from './css/cssModules';
 
 
 // 侧边栏
@@ -152,6 +153,17 @@ const SliderMenuList = [
             label: '好用的react库',
             prop: 'react-good-comp',
             comp: () => <Note />,
+          },
+      ]
+    },
+    {
+      label: 'React-CSS',
+      prop: 'react-css',
+      children: [
+          {
+            label: 'CSS Modules',
+            prop: 'react-css-modules',
+            comp: () => <CssModules />,
           },
       ]
     }
