@@ -1,6 +1,8 @@
 import React from 'react';
 import LeftSider from '../comp/LeftSider';
 
+
+import PrefCss from './h5/css';
 // 侧边栏
 const SliderMenuList = [
     {
@@ -18,7 +20,7 @@ const SliderMenuList = [
                 label: 'css',
                 prop: 'h5-perf-css',
                 comp: function() {
-                    return null;
+                    return <PrefCss />;
                 },
             },
             {
