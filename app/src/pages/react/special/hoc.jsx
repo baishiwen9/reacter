@@ -7,15 +7,15 @@ export default class HOC extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title">
                     <span className="textShadow">高阶组件</span>
                 </p>
                 <p className="item-title">
-                    <span className="textShadow">一、纯函数定义及构成原则</span>
+                   一、纯函数定义及构成原则
                 </p>
                 
-                <div className="article-desc">
+                <div className="quote">
                     概念： 简单来说，就是一个函数的返回结果只依赖于它的参数，并且在执行过程中没有副作用，我们就把这个函数叫做纯函数。
                     <br /><br />
                     纯函数的构成四大原则为：<br />
@@ -48,13 +48,9 @@ function getCircleArea(r) {
 只依赖半径的入参，在执行过程中也不会有任何副作用产生。`} />
                 </div>
 
-                <p className="item-title">
-                    <span className="textShadow">二、纯函数的好处</span>
-                </p>
+                <p className="item-title">二、纯函数的好处</p>
 
-                <p className="item-title">
-                    <span className="textShadow">三、纯函数在react中的使用</span>
-                </p>
+                <p className="item-title">三、纯函数在react中的使用</p>
             </div>
         )
     }

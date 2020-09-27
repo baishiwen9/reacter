@@ -10,20 +10,20 @@ export default class CopyMode extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title">
                     <span className="textShadow">浅拷贝 & 深拷贝</span>
                 </p>
                 <p className="item-title">
                     <span className="textShadow">一、浅拷贝</span>
                 </p>
-                <div className="article-desc">
+                <div className="quote">
                     实现浅拷贝的方法🤔<br />
                     1. 使用for...in循环<br />
                     2. 使用Object.assign<br />
                     3. 直接使用=赋值<br />
                 </div>
-                <div className="article-desc">
+                <div className="quote">
                     <span className="mark">1. 使用for...in循环</span><br />
                     <Code code={`
 // 只复制第一层的浅拷贝
@@ -74,14 +74,14 @@ obj2.a.b; //444
                 <p className="item-title">
                     <span className="textShadow">二、深拷贝</span>
                 </p>
-                <div className="article-desc">
+                <div className="quote">
                     实现深拷贝的方法🤔<br />
                     1. 使用循环+递归<br />
                     2. 使用JSON方法<br />
                     3. 使用Reflect法<br />
                     4. 数组使用slice和concat<br />
                 </div>
-                <div className="article-desc">
+                <div className="quote">
                     <span className="mark">1. 使用循环+递归</span><br />
                     <Code code={`
 function deepCopy(obj) {
