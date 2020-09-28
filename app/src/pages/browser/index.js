@@ -2,7 +2,7 @@ import React from 'react';
 import LeftSider from './../comp/LeftSider';
 
 
-
+import WorkPrinciple from './base/workPrinciple';
 import BrowserLoad from './base/browserload';
 import BrowserCache from './base/cache';
 import BrowserNote from './base/browser';
@@ -21,11 +21,16 @@ const SliderMenuList = [
         prop: 'browser-base',
         children: [
             {
+                label: '浏览器工作原理',
+                prop: 'browser-WorkPrinciple',
+                comp: () => <WorkPrinciple />
+            },
+            {
               label: '在地址栏输入url到页面加载的过程',
               prop: 'browser-load',
               comp: function() {
                   return <BrowserLoad />;
-              },
+            },
             },{
                 label: '浏览器缓存',
                 prop: 'browser-cache',

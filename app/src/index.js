@@ -83,6 +83,13 @@ ReactDOM.render(
         <APP />
     </Provider>,
     document.getElementById('root'),
+    () => {
+       const loading = document.querySelector('.global-ui-loading');
+       setTimeout(() => {
+            loading.classList.remove('show');
+            loading.classList.add('hide');
+       }, 0);
+    }
 );
 
 serviceWorker.unregister();

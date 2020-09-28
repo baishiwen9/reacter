@@ -512,40 +512,16 @@ module.exports = function(webpackEnv) {
     plugins: [
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin({
-        
-        // headjs: `<script>${fs.readFileSync(
-        //   resolve('src/template/head.js')
-        // )}</script>`,
-        // bodyjs: `<script>${fs.readFileSync(
-        //   resolve('src/template/body.js')
-        // )}</script>`,
-        // preloadDll: dllDir
-        //   ? `<link rel="preload" href="${publicPath.replace(
-        //     /\/*$/,
-        //     ''
-        //   )}/static/js/${getDllFileName()}.js" as="script" crossorigin="anonymous"></link>`
-        //   : '',
-        // dll: dllDir
-        //   ? `<script type="text/javascript" src="${publicPath.replace(
-        //     /\/*$/,
-        //     ''
-        //   )}/static/js/${getDllFileName()}.js" crossorigin="anonymous"></script>`
-        //   : '',
-        // css: `<style>${fs.readFileSync(resolve('public/loading/loading.css'))}</style>`,
-        // html: fs.readFileSync(resolve('public/loading/loading.html')),
-        // bodyjs: `<script>${fs.readFileSync(
-        //   resolve('public/loading/loading.js')
-        // )}</script>`,
-        // loading: {
-        //   html: fs.readFileSync(resolve('public/loading/loading.html')),
-        //   css: `<style>${fs.readFileSync(
-        //     resolve('public/loading/loading.css')
-        //   )}</style>`
-        // },
         title: '前端学习笔记',
         inject: true,
         chunksSortMode: 'auto',
         template: paths.appHtml,
+        loading: {
+            html: fs.readFileSync(require.resolve('../public/loading/loading.html')),
+            css: `<style>${fs.readFileSync(
+              require.resolve('../public/loading/loading.css')
+            )}</style>`
+        },
         minify: isEnvDevelopment
           ? false
           : {
@@ -568,14 +544,7 @@ module.exports = function(webpackEnv) {
       //       inject: true,
       //       template: paths.appHtml,
       //     },
-      //     {
-      //       // loading: {
-      //         // html: fs.readFileSync(resolve('public/loading/loading.html')),
-      //         // css: `<style>${fs.readFileSync(
-      //         //   resolve('public/loading/loading.css')
-      //         // )}</style>`
-      //       // },
-      //     },
+      //     
       //     isEnvProduction
       //       ? {
       //           minify: {

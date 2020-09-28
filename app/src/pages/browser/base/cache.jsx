@@ -191,7 +191,6 @@ export default class BrowserCache extends Component {
                     2. 普通刷新（f5）：因为进程没有结束，因此memory cache是可用的，会被优先使用，其次是disk cache。<br />
                     3. 强制刷新（ctrl+f5）：浏览器不使用缓存
                 </div>
-
             </div>
         )
     }
