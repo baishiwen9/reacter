@@ -10,11 +10,11 @@ export default class BrowserNote extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="article-desc">
                 <p className="article-title"><span className="textShadow">浏览器进程、渲染、运行机制解密</span></p>
                 
-                <p className="item-title"><span className="textShadow">一、线程和进程</span></p>
-                <div className="article-desc">
+                <p className="item-title">一、线程和进程</p>
+                <div className="quote">
                     参考文档： <a href="https://segmentfault.com/a/1190000012925872" target="_blank">https://segmentfault.com/a/1190000012925872</a><br/><br/>
                     1、进程：进程是CPU分配的最小单位，是能拥有资源和独立运行的最小单位， 不同的进程之间可以通讯，但是代价较大。<br/>
                     2、线程：是CPU调度的最小单位, 线程是建立在进程的基础上的一次程序运行单位，一个进程可以有多个线程；单线程和多线程是指一个进程里的单和多；<br/>
@@ -23,8 +23,8 @@ export default class BrowserNote extends Component {
                     进程是一个工厂，线程是工厂的工人，工厂之间独立，一个工厂可以有一个或者多个工人，每个工人协作完成任务，工人之间共享空间。<br />
                 </div>
 
-                <p className="item-title"><span className="textShadow">二、浏览器是多进程的</span></p>
-                <div className="article-desc">
+                <p className="item-title">二、浏览器是多进程的</p>
+                <div className="quote">
                     1. 浏览器是多进程的<br />
                     2. 浏览器之所以能够运行，是因为系统给他的进程分配了资源（CPU，内存）<br />
                     3. 简单点理解，每打开一个Tab页，相当于创建了一个独立的浏览器进程。<br /><br />
@@ -40,7 +40,6 @@ export default class BrowserNote extends Component {
                     4. 浏览器渲染进程（Renderer进程，内部是多线程的）：默认每个Tab页一个进程，互不影响, 作用有：<br />
                         <span className="text-placeholder" />页面渲染，脚本执行，事件处理<br /><br />
 
-                    
                     <span className="mark">浏览器多进程的优点</span><br />
                     1. 防止单个tab崩溃影响整个浏览器<br />
                     2. 避免第三方插件crash影响整个浏览器<br />
@@ -48,8 +47,8 @@ export default class BrowserNote extends Component {
                     4. 方便使用沙盒模型隔离插件等进程，提高浏览器稳定性<br />
                 </div>
 
-                <p className="item-title"><span className="textShadow">三、浏览器内核--渲染进程</span></p>
-                <div className="article-desc">
+                <p className="item-title">三、浏览器内核--渲染进程</p>
+                <div className="quote">
                     页面的渲染，js的执行，事件的循环都在这个进程中执行。<br />
                     <span className="mark">浏览器的渲染是多线程的。</span><br /><br />
                     主要的线程有：<br />

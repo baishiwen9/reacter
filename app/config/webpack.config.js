@@ -520,7 +520,10 @@ module.exports = function(webpackEnv) {
             html: fs.readFileSync(require.resolve('../public/loading/loading.html')),
             css: `<style>${fs.readFileSync(
               require.resolve('../public/loading/loading.css')
-            )}</style>`
+            )}</style>`,
+            js: `<script>${fs.readFileSync(
+              require.resolve('../public/loading/loading.js')
+            )}</script>`,
         },
         minify: isEnvDevelopment
           ? false

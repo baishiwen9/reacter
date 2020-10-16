@@ -74,6 +74,10 @@ const TabsData = [
                 id: 'js-babel',
                 text: 'babel在线转换',
                 link: 'https://www.babeljs.cn/repl'
+            },{
+                id: 'js-sf',
+                text: 'fe-算法',
+                link: 'http://obkoro1.com/web_accumulate/algorithm/induction/%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0.html',
             }
         ]
     },

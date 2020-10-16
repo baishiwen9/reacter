@@ -84,11 +84,7 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root'),
     () => {
-       const loading = document.querySelector('.global-ui-loading');
-       setTimeout(() => {
-            loading.classList.remove('show');
-            loading.classList.add('hide');
-       }, 0);
+        window.UI && window.UI.loading && window.UI.loading.hide && window.UI.loading.hide();
     }
 );
 
