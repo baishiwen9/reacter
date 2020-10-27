@@ -125,6 +125,11 @@ static getDerivedStateFromProps(nextProps, preState) {
                     componentDidMount<br />
                     componentWillUnmount
                 </div>
+
+                <div className="quote">
+                    为什么要用getDerivedStateFromProps代替componentWillReceiveProps？<br />
+                    
+                </div>
             </div>
         )
     }

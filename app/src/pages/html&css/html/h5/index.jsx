@@ -5,10 +5,39 @@ export default class H5Page extends Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount() {
+        document.addEventListener('click', () => {
+            const video = document.querySelector('.videoWrap');
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }, false);
+    }
     render() {
+        const style={
+            position: 'fixed',
+            left: '0',
+            top: '0',
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            background: '#000',
+            zIndex: "99999"
+        };
+        const videoStyle = {
+            width: '100%',
+            height: '220px',
+        }
         return (
             <div className="article-desc">
-                <p className="article-title"><span className="textShadow">h5新特性</span></p>
+                <div className="videoContainer" style={style}>
+                    <video style={videoStyle} className="videoWrap" src="http://47.92.204.145/study/static/media/lmh-xiaoyou.MOV" ></video>
+                </div>
+                {/* <p className="article-title"><span className="textShadow">h5新特性</span></p>
                 <div className="quote">
                     参考文档： https://juejin.im/post/6844903878857588750<br />
                     https://juejin.im/post/6844903919710126087<br />
@@ -65,7 +94,7 @@ export default class H5Page extends Component {
                     multiple：可选择多个值，适用于input中type为email和file用法<br /><br />
                     placeholder：提示文字，适用于input中type为：text, search, url, telephone, email, password<br /><br />
                     required：规定不能为空，适用于以下类型的input标签：text, search, url, telephone, email, password, date pickers, number, checkbox, radio, file<br/>
-                </div>
+                </div> */}
             </div>
         )
     }

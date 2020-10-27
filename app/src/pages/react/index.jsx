@@ -3,6 +3,7 @@ import LeftSider from './../comp/LeftSider';
 
 
 import BaseNote from './base/index';
+import Hooks from './base/hooks';
 import LifeCycle from './lifeCycle/index';
 import PerfState from './perf/index';
 import SelfComp from './selfComp/index';
@@ -44,6 +45,12 @@ const SliderMenuList = [
               prop: 'set-state',
               comp: function() {
                 return <SetState />;
+              },
+            },{
+              label: 'hooks',
+              prop: 'hooks',
+              comp: function() {
+                return <Hooks />;
               },
             },
         ]

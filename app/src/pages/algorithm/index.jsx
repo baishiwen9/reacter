@@ -6,9 +6,10 @@ import BubbleSort from './bubbleSort';
 import Mianshi from './mianshi';
 import QuickSort from './quickSort';
 import SelectionSort from './selectionSort';
-
-
+import TableList from './tableList';
+import Stack from './stack';
 import TreeSort from './tree';
+import Queue from './queue.jsx';
 // import H5APINote from './api/index';
 
 
@@ -52,7 +53,26 @@ const SliderMenuList = [
               comp: function() {
                 return <Mianshi />;
               },
-          },
+            },
+            {
+              label: '列表',
+              prop: 'algorithm-tableList',
+              comp: function() {
+                return <TableList />;
+              },
+            },{
+              label: '栈',
+              prop: 'algorithm-stack',
+              comp: function() {
+                return <Stack />;
+              },
+            },{
+              label: '队列',
+              prop: 'algorithm-queue',
+              comp: function() {
+                return <Queue />;
+              },
+            },
         ]
     },
 ];

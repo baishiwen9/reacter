@@ -21,7 +21,7 @@ export default class LeftSider extends Component {
     render() {
         const { SliderMenuList } = this.props; 
         const { currentContentComp } = this.state; 
-        const contentHeight = window.innerHeight - 60;
+        const contentHeight = window.innerHeight - 64;
         return (
             <Layout>
               <Sider width={200} className="site-layout-background" collapsible>
@@ -43,12 +43,13 @@ export default class LeftSider extends Component {
                   }
                 </Menu>
               </Sider>
-              <Layout style={{ padding: '0 24px 24px'}}>
+              <Layout style={{ padding: '16px', height: contentHeight + "px", overflowY: 'auto'}}>
                 <Content className="site-layout-background"
                   style={{
-                    padding: 16,
-                    margin: 0,
-                    minHeight: contentHeight,
+                    // padding: '24',
+                    // margin: 0,
+                    // height: contentHeight,
+                    // overflowY: 'auto'
                   }}
                 >
                   { currentContentComp && currentContentComp()}
